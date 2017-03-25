@@ -8,14 +8,15 @@
 <!-- The core concept is to have a procedurally generated city you can walk around and smash as a giant -->
 
 <!-- Mozilla A-Frame Tags -->
-<a-scene physics="debug:true">
+<a-scene physics="debug: false">
   <a-sky color="#CCCCFF"></a-sky>
 
   <!-- Disembodied white hands are fine for a prototype -->
-  <a-entity hand-controls="left" dynamic-body></a-entity>
-  <a-entity shape="sphere" sphereRadius="0.25" hand-controls="right" dynamic-body></a-entity>
+  <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="left"></a-entity>
+  <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="right"></a-entity>
 
-  <a-box color="#CC0000" dynamic-box position="0 2.0 0" width="1" height="1" depth="1"></a-box>
+  <!-- Need to generate a stack of boxes to destroy -->
+  <a-box color="#CC0000" dynamic-body position="0.0 2.0 0.0" width="0.5" height="0.5" depth="0.5"></a-box>
 
   <!-- Generate a ground plane -->
   <a-plane rotation="-90 0 0" height="50" width="50" color="#CCCC33" static-body></a-plane>
