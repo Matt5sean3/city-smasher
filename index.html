@@ -11,14 +11,14 @@
 <a-scene physics="debug: false">
   <a-sky color="#CCCCFF"></a-sky>
 
-  <!-- Disembodied white hands are fine for a prototype -->
-  <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="left" trigger-reset></a-entity>
-  <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="right" trigger-reset></a-entity>
-
 
   <!-- Generate a ground plane -->
-  <a-plane city rotation="-90 0 0" height="50" width="50" color="#CCCC33" static-body>
-    <!-- Need to generate a stack of boxes to destroy -->
+  <a-entity structure>
+    <!-- Disembodied white hands are fine for a prototype -->
+    <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="left" trigger-reset></a-entity>
+    <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="right" trigger-reset></a-entity>
+
+    <!-- Generates a stack of boxes to destroy -->
     <!-- <a-box color="#FF0000" dynamic-body position="0.0 2.0 0.0" width="0.1" height="0.1" depth="0.1"></a-box> -->
   </a-plane>
 
