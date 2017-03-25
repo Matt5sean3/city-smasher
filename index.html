@@ -12,8 +12,8 @@
   <a-sky color="#CCCCFF"></a-sky>
 
   <!-- Disembodied white hands are fine for a prototype -->
-  <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="left"></a-entity>
-  <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="right"></a-entity>
+  <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="left" trigger-reset></a-entity>
+  <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.1" hand-controls="right" trigger-reset></a-entity>
 
   <!-- Need to generate a stack of boxes to destroy -->
   <a-box color="#CC0000" dynamic-body position="0.0 2.0 0.0" width="0.5" height="0.5" depth="0.5"></a-box>
