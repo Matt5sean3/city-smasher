@@ -10,14 +10,14 @@
 <!-- The core concept is to have a procedurally generated city you can walk around and smash as a giant -->
 
 <!-- Mozilla A-Frame Tags -->
-<a-scene>
+<a-scene physics="debug:true">
   <a-sky color="#CCCCFF"></a-sky>
 
   <!-- Disembodied white hands are fine for a prototype -->
   <a-entity hand-controls="left" dynamic-body></a-entity>
-  <a-entity hand-controls="right" dynamic-body></a-entity>
+  <a-entity shape="sphere" sphereRadius="0.25" hand-controls="right" dynamic-body></a-entity>
 
-  <a-box color="#CC0000" dynamic-box position="5 0.5 0" width="1" height="1" depth="1"></a-box>
+  <a-box color="#CC0000" dynamic-box position="0 2.0 0" width="1" height="1" depth="1"></a-box>
 
   <!-- Generate a ground plane -->
   <a-plane rotation="-90 0 0" color="#CCCC33" static-body></a-plane>
