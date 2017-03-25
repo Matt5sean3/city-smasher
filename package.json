@@ -4,7 +4,7 @@
   "description": "A game for smashing things in VR",
   "main": "js/main.js",
   "scripts": {
-    "install": "browserify js/main.js -o js/bundle.js"
+    "install": "node_modules/browserify/bin/cmd.js js/main.js -o js/bundle.js"
   },
   "repository": {
     "type": "git",

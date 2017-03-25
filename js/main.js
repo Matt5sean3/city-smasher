@@ -18,20 +18,20 @@ var rightHand = document.querySelector('#right-hand[hand-controls]');
 
 leftHand.addEventListener("pointup", function() {
     leftPointing = true;
-}, false);
-
-leftHand.addEventListener("pointdown", function() {
-    leftPointing = false;
     if(rightPointing)
         scene.reload();
 }, false);
 
+leftHand.addEventListener("pointdown", function() {
+    leftPointing = false;
+}, false);
+
 rightHand.addEventListener("pointup", function() {
     rightPointing = true;
+    if(leftPointing)
+        scene.reload();
 }, false);
 rightHand.addEventListener("pointdown", function() {
     rightPointing = false;
-    if(leftPointing)
-        scene.reload();
 }, false);
 
