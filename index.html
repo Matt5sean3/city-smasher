@@ -1,9 +1,7 @@
 <html>
 <head>
 <title>City Smasher</title>
-<script type="text/javascript" src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-<script type="text/javascript" src="js/lib/aframe-physics-system.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/bundle.js"></script>
 </head>
 <body>
 
@@ -20,7 +18,7 @@
   <a-box color="#CC0000" dynamic-box position="0 2.0 0" width="1" height="1" depth="1"></a-box>
 
   <!-- Generate a ground plane -->
-  <a-plane rotation="-90 0 0" color="#CCCC33" static-body></a-plane>
+  <a-plane rotation="-90 0 0" height="50" width="50" color="#CCCC33" static-body></a-plane>
 
   <!-- Generate a few buildings that are destroyed when the hands collide with them -->
 </a-scene>
