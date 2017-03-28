@@ -15,18 +15,21 @@
   <!-- Disembodied white hands are fine for a prototype -->
   <!-- Linking a dynamic-body to the hand instead of using a static body would be better, helps prevent things from going flying -->
 
-  <a-entity id="left-hand" static-body="shape: sphere; sphereRadius: 0.01" hand-controls="left" trigger-reset ></a-entity>
-  <a-entity id="right-hand" static-body="shape: sphere; sphereRadius: 0.01" hand-controls="right" trigger-reset></a-entity>
+  <!-- Create pairs of static controllers locked to dynamic spheres -->
+  <a-entity id="left-hand" hand-controls="left" trigger-reset visible="false" static-body="shape: none"></a-entity>
+  <a-sphere radius="0.1" dynamic-body constraint="type: lock; target: #left-hand"></a-sphere>
+
+  <a-entity id="right-hand" hand-controls="right" trigger-reset visible="false" static-body="shape: none"></a-entity>
+  <a-sphere radius="0.1" dynamic-body constraint="type: lock; target: #right-hand"></a-sphere>
 
   <!-- Make the geometry a destructible -->
   <a-box width="0.5" height="1.0" depth="0.5" position="0.0 0.5 -2.0" destructible></a-box>
 
-  <!-- Make a non-destructible sphere for testing purposes -->
-
-  <a-sphere radius="0.5" position="0.0 5.5 -2.0" dynamic-body></a-sphere>
-
   <!-- Make a platform to work on -->
   <a-plane width="20" height="20" color="#333" rotation="-90 0 0" static-body></a-plane>
+
+  <!-- Make a wall to test hard limits on the controller against -->
+  <a-plane width="2" height="2" depth="0.25" position="0 1 1" rotation="0 180 0" color="#444" static-body></a-plane>
 
 </a-scene>
 
