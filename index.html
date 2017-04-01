@@ -16,11 +16,8 @@
   <!-- Linking a dynamic-body to the hand instead of using a static body would be better, helps prevent things from going flying -->
 
   <!-- Create pairs of static controllers locked to dynamic spheres -->
-  <a-entity id="left-hand" hand-controls="left" trigger-reset visible="false" static-body="shape: none"></a-entity>
-  <a-sphere radius="0.1" color="#AAA" dynamic-body constraint="type: lock; target: #left-hand"></a-sphere>
-
-  <a-entity id="right-hand" hand-controls="right" trigger-reset visible="false" static-body="shape: none"></a-entity>
-  <a-sphere radius="0.1" color="#AAA" dynamic-body constraint="type: lock; target: #right-hand"></a-sphere>
+  <a-sphere dynamic-hand="side: left" grabber radius="0.1" color="#AAA"></a-sphere>
+  <a-sphere dynamic-hand="side: right" grabber radius="0.1" color="#AAA"></a-sphere>
 
   <!-- Make the geometry a destructible -->
   <a-box width="0.5" height="1.0" depth="0.5" position="0.0 0.5 -2.0" destructible></a-box>
