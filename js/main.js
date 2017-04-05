@@ -148,8 +148,8 @@ AFRAME.registerComponent("dynamic-hand", {
         });
         this.el.parentNode.appendChild(staticHand);
         staticHand.setAttribute("constraint", {
-            "type": "distance",
-            "distance": 0.01,
+            "type": "lock",
+            "maxForce": 100,
             "target": this.el
         });
 
